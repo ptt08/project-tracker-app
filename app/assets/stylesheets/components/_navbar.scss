@@ -1,11 +1,15 @@
-#navbar {
-  padding: 5px 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: #1D2125;
+@import "config/colors";
 
-  a, i { color: white; }
+#navbar {
+  padding: 5px 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $black;
+  border-bottom: 1px solid #32383E;
+  font-size: 0.9em;
+
+  a, i { color: $gray; }
 }
 
 #navbar ul {
@@ -20,19 +24,31 @@
   transition: background 0.1s ease-out;
 
   &:hover {
-    background: #333C44;
+    background: $black-hovered;
   }
+}
+
+.subnav {
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
 .btn-action {
   padding: 10px 12px;
   border-radius: 5px;
   background: #579DFF;
-  color: black !important;
+  color: $black !important;
 }
 
 .logo {
   font: {
     weight: 900;
   }
+}
+
+.user {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }

@@ -1,4 +1,5 @@
 @import "fonts";
+@import "colors";
 
 *, *::after, *::before {
   box-sizing: border-box;
@@ -8,9 +9,14 @@
   margin: 0;
 }
 
-  html {
-    font-family: $font;
-  }
+html {
+  font-family: $font;
+  color: $gray;
+}
+
+body {
+  background: $black;
+}
 
 img {
   max-width: 100%;
@@ -23,4 +29,9 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+.container {
+  width: calc(min(100% - 3rem, 120ch));
+  margin: 0 auto;
 }

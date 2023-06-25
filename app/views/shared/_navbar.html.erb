@@ -1,20 +1,23 @@
 <nav id="navbar">
-  <div class="logo">
-    <%= link_to "ProjectTracker", root_path %>
-  </div>
-  <ul class="links">
-    <li>
-      <%= link_to "Workspaces" %>
-      <%= icon('fa-solid', 'chevron-down') %>
-    </li>
-    <li>
-      <%= link_to "Recent" %>
-      <%= icon('fa-solid', 'chevron-down') %>
-    </li>
-    <li>
-      <%= link_to "Starred" %>
-      <%= icon('fa-solid', 'chevron-down') %>
-    </li>
-  </ul>
+  <div class="subnav">
+    <ul class="links">
+      <li class="logo">
+        <%= link_to "ProjectTracker", root_path %>
+      </li>
+      <li>
+        <%= link_to "Workspaces" %>
+        <%= icon('fa-solid', 'chevron-down') %>
+      </li>
+      <li>
+        <%= link_to "Recent" %>
+        <%= icon('fa-solid', 'chevron-down') %>
+      </li>
+      <li>
+        <%= link_to "Starred" %>
+        <%= icon('fa-solid', 'chevron-down') %>
+      </li>
+    </ul>
     <%= link_to "Create", "#", class: "btn-action" %>
+  </div>
+  <%= image_tag("avatar_placeholder", class: "user") %>
 </nav>
