@@ -1,0 +1,38 @@
+#navbar {
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #1D2125;
+
+  a, i { color: white; }
+}
+
+#navbar ul {
+  padding: 0;
+}
+
+#navbar ul li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 12px;
+  border-radius: 5px;
+  transition: background 0.1s ease-out;
+
+  &:hover {
+    background: #333C44;
+  }
+}
+
+.btn-action {
+  padding: 10px 12px;
+  border-radius: 5px;
+  background: #579DFF;
+  color: black !important;
+}
+
+.logo {
+  font: {
+    weight: 900;
+  }
+}
