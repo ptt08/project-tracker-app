@@ -1,5 +1,5 @@
 class WorkspacesController < ApplicationController
   def index
-    @workspaces = current_user.workspaces
+    @workspaces = user_signed_in? ? current_user.workspaces : []
   end
 end
