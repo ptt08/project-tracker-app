@@ -1,2 +1,16 @@
 <nav id="sidebar">
+  <div>
+    <p>Workspaces</p>
+    <%= link_to "#", class: 'btn-add-workspace' do %>
+      <% icon('fa-solid', 'plus') %>
+    <% end %>
+  </div>
+  <ul>
+    <% @workspaces.each do |w| %>
+      <li class="nav-link">
+        <%= w.name %>
+        <%= icon('fa-solid', 'chevron-down') %>
+      </li>
+    <% end %>
+  </ul>
 </nav>

@@ -1,0 +1,48 @@
+@import "../navbar";
+
+#sidebar {
+  // background: red;
+  width: 250px;
+  min-height: 100vh;
+  position: fixed;
+  margin-top: 3em;
+
+  ul { padding: 0; }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 8px;
+
+    a { color: $gray; }
+    p { font-size: 0.8em; }
+  }
+
+  .btn-add-workspace {
+    position: relative;
+  }
+
+  .btn-add-workspace::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    transition: background 0.1s ease-out;
+  }
+
+  .btn-add-workspace:hover::before {
+    background: $black-hovered;
+  }
+
+  li.nav-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 8px;
+  }
+}
