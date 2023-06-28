@@ -1,11 +1,10 @@
-@import "../navbar";
+@import "navbar";
 
 #sidebar {
   // background: red;
   width: 250px;
   min-height: 100vh;
   position: fixed;
-  margin-top: 3em;
 
   ul { padding: 0; }
 
