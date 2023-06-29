@@ -1,7 +1,8 @@
 <%= turbo_frame_tag "modal" do %>
-  <div class="modal-container">
-    <section class="modal">
+  <div class="modal-container" data-controller="modal" data-modal-target="overlay" data-action="click->modal#checkClick">
+    <section class="modal" data-modal-target="window">
       <%= render "form", workspace: @workspace %>
+      <%= button_tag "Close", data: { action: "modal#hideModal" }, type: "button" %>
     </section>
   </div>
 <% end %>
