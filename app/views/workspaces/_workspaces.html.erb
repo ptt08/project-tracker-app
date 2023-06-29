@@ -1,0 +1,15 @@
+<div class="workspaces">
+  <% @workspaces.each do |w| %>
+    <h3><%= w.name %></h3>
+    <div class="project-cards">
+      <% w.projects.each do |p| %>
+        <div class="project-card">
+          <h4><%= p.name %></h4>
+        </div>
+      <% end %>
+      <div class="project-card">
+        <p>Create new board</p>
+      </div>
+    </div>
+  <% end %>
+</div>
