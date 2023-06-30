@@ -3,6 +3,10 @@ class ProjectsController < ApplicationController
     @projects = current_user.projects
   end
 
+  def show
+    @project = Project.find(params[:id])
+  end
+
   def new
     @project = Project.new
     @workspace = Workspace.find(params[:workspace_id])
@@ -18,6 +22,7 @@ class ProjectsController < ApplicationController
   end
 
   private
+
   def project_params
     params.require(:project).permit(:name, :workspace_id)
   end

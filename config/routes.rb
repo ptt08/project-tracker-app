@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   resources :workspaces, only: %i[index new create]
   resources :projects, only: %i[index new create show]
+  resources :lists, only: %i[new create]
 end
