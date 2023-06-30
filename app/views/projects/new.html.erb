@@ -1,0 +1,10 @@
+<%= turbo_frame_tag "modal" do %>
+  <div class="modal-container" data-controller="modal" data-modal-target="overlay" data-action="click->modal#checkClick">
+    <section class="modal" data-modal-target="window">
+      <%= render "form", project: @project %>
+      <%= link_to "#", class: "btn-close", data: { action: "modal#hideModal" } do %>
+        <%= icon('fa-solid', 'xmark') %>
+      <% end %>
+    </section>
+  </div>
+<% end %>

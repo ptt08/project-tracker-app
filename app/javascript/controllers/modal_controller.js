@@ -4,7 +4,8 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = [ 'overlay', 'window' ];
 
-  hideModal() {
+  hideModal(e) {
+    // e.preventDefault();
     this.element.parentElement.removeAttribute('src')
     this.element.remove()
   }

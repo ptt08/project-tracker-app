@@ -5,10 +5,12 @@
       <% w.projects.each do |p| %>
         <div class="project-card">
           <h4><%= p.name %></h4>
+          <%= link_to '', project_path(p), class: "project-card-link" %>
         </div>
       <% end %>
       <div class="project-card create-card">
         <p>Create new board</p>
+        <%= link_to '', new_project_path, class: "project-card-link", data: { turbo_frame: "modal"} %>
       </div>
     </div>
   <% end %>
