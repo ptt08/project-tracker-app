@@ -10,7 +10,7 @@
       <% end %>
       <div class="project-card create-card">
         <p>Create new board</p>
-        <%= link_to '', new_project_path, class: "project-card-link", data: { turbo_frame: "modal"} %>
+        <%= link_to '', new_project_path(workspace_id: w.id), class: "project-card-link", data: { turbo_frame: "modal"} %>
       </div>
     </div>
   <% end %>

@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @workspace = Workspace.find(params[:workspace_id])
   end
 
   def create
