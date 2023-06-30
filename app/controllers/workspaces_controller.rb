@@ -1,6 +1,6 @@
 class WorkspacesController < ApplicationController
   def index
-    @workspaces = current_user.workspaces
+    @workspaces = user_signed_in? ? current_user.workspaces : []
   end
 
   def new
@@ -9,8 +9,8 @@ class WorkspacesController < ApplicationController
 
   def create
     @workspace = Workspace.new(workspace_params)
+    current_user.workspaces << @workspace
     if @workspace.save
-      current_user.workspaces << @workspace
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity

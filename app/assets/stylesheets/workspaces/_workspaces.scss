@@ -4,17 +4,29 @@
   h3 { margin-top: 2em; }
 }
 
+// .project-cards {
+//   margin-top: 1em;
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 1em;
+// }
+
 .project-cards {
   margin-top: 1em;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1em;
 }
 
 .project-card {
   background: $dark-gray;
-  width: 200px;
   height: 100px;
   border-radius: 0.25em;
   padding: 0.75em;
+}
+
+.create-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

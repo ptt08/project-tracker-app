@@ -1,4 +1,5 @@
 <%= simple_form_for workspace, data: { turbo_frame: "_top" } do |f| %>
-  <%= f.input :name %>
-  <%= f.submit %>
+  <h1>Let's build a Workspace</h1>
+  <%= f.input :name, label: "Workspace name", placeholder: "John's Co.", class: "modal-input" %>
+  <%= f.submit value: "Continue", class: "btn-continue" %>
 <% end %>
