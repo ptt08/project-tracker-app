@@ -14,6 +14,7 @@
 .project-cards {
   margin-top: 1em;
   display: grid;
+  // Might have to change this
   grid-template-columns: repeat(4, 1fr);
   gap: 1em;
 }

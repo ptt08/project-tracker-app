@@ -1,12 +1,16 @@
 class ListsController < ApplicationController
   def new
+    @project = Project.find(params[:project_id])
     @list = List.new
   end
 
   def create
+    @project = Project.find(params[:list][:project_id])
     @list = List.new(list_params)
     if @list.save
-      redirect_to root_path
+      render turbo_stream: [
+        turbo_stream.after("lists", @list)
+      ]
     else
       render :new, status: :unprocessable_entity
     end
@@ -15,6 +19,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :project_id)
   end
 end
