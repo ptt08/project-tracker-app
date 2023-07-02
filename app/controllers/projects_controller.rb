@@ -3,6 +3,12 @@ class ProjectsController < ApplicationController
     @projects = current_user.projects
   end
 
+  def sort
+    @list = List.find(params[:id])
+    @list.update(row_order_position: params[:row_order_position])
+    head :no_content
+  end
+
   def show
     @project = Project.find(params[:id])
     @lists = @project.lists.rank(:row_order)
