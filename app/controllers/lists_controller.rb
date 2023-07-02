@@ -9,7 +9,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     if @list.save
       render turbo_stream: [
-        turbo_stream.after("lists", @list)
+        turbo_stream.prepend("lists", @list)
       ]
     else
       render :new, status: :unprocessable_entity

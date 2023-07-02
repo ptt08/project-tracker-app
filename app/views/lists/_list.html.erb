@@ -1,3 +1,12 @@
-<%= turbo_frame_tag list do %>
-  <p><%= list.name %></p>
-<% end %>
+<ul>
+  <%= turbo_frame_tag list do %>
+    <li>
+      <%= list.name %>
+    </li>
+    <ul>
+      <% list.cards.each do |task| %>
+        <li><%= task.name %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</ul>
