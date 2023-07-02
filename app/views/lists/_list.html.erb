@@ -1,12 +1,16 @@
-<ul>
+<li data-sortable-id="<%= list.id %>">
   <%= turbo_frame_tag list do %>
-    <li>
+    <p>
       <%= list.name %>
-    </li>
-    <ul>
-      <% list.cards.each do |task| %>
-        <li><%= task.name %></li>
-      <% end %>
-    </ul>
+    </p>
+    <% if list.cards.any? %>
+      <ul>
+        <% list.cards.rank(:row_order).each do |task| %>
+          <li>
+            <%= task.name %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
   <% end %>
-</ul>
+</li>

@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @lists = @project.lists.order(created_at: :desc)
+    @lists = @project.lists.rank(:row_order)
   end
 
   def new
