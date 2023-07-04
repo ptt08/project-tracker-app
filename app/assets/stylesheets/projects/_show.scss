@@ -1,0 +1,17 @@
+.lists-container {
+  display: flex;
+  overflow-x: scroll;
+  min-height: 80vh;
+}
+
+#lists {
+  display: flex;
+  .list {
+    background: black;
+    border-radius: 1em;
+    margin-inline: 1em;
+    padding: 1em;
+    width: 270px;
+    height: fit-content;
+  }
+}

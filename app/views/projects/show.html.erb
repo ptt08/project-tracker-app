@@ -1,5 +1,7 @@
 <h1><%= @project.name %></h1>
-<div id="lists" data-controller="sortable">
-  <%= render @lists %>
+<div class="lists-container">
+  <div id="lists" data-controller="sortable">
+    <%= render @lists %>
+  </div>
+  <%= turbo_frame_tag "create", src: new_list_path(project_id: @project.id) %>
 </div>
-<%= turbo_frame_tag "create", src: new_list_path(project_id: @project.id) %>
