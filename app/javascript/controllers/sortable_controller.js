@@ -11,9 +11,10 @@ export default class extends Controller {
   }
 
   onEnd(e) {
-    console.log(e.item.dataset.sortableId);
+    var sortableUpdateUrl = e.item.dataset.sortableUpdateUrl;
+    console.log(e.item.dataset.sortableUpdateUrl);
     console.log(e.newIndex);
-    put(`/projects/${e.item.dataset.sortableId}/sort`, {
+    put(sortableUpdateUrl, {
       body: JSON.stringify({row_order_position: e.newIndex})
     })
   }

@@ -1,13 +1,13 @@
-<li data-sortable-id="<%= list.id %>">
+<li data-sortable-update-url="<%= sort_list_path(list) %>">
   <%= turbo_frame_tag list do %>
     <p>
       <%= list.name %>
     </p>
     <% if list.cards.any? %>
-      <ul>
-        <% list.cards.rank(:row_order).each do |task| %>
-          <li>
-            <%= task.name %>
+      <ul data-controller="sortable">
+        <% list.cards.rank(:row_order).each do |card| %>
+          <li data-sortable-update-url="<%= sort_card_path(card) %>">
+            <%= render card %>
           </li>
         <% end %>
       </ul>

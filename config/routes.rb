@@ -6,10 +6,17 @@ Rails.application.routes.draw do
   root "workspaces#index"
 
   resources :workspaces, only: %i[index new create]
-  resources :projects, only: %i[index new create show] do
+  resources :projects, only: %i[index new create show]
+
+  resources :lists, only: %i[new create] do
     member do
       put :sort
     end
   end
-  resources :lists, only: %i[new create]
+
+  resources :cards do
+    member do
+      put :sort
+    end
+  end
 end

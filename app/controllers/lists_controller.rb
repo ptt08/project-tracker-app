@@ -4,6 +4,12 @@ class ListsController < ApplicationController
     @list = List.new
   end
 
+  def sort
+    @list = List.find(params[:id])
+    @list.update(row_order_position: params[:row_order_position])
+    head :no_content
+  end
+
   def create
     @project = Project.find(params[:list][:project_id])
     @list = List.new(list_params)
